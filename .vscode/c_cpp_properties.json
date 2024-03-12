@@ -1,0 +1,54 @@
+{
+	"includePath": [
+        "${workspaceFolder}\\Intermediate\\**",
+        "[Workspace Folder]\\Plugins\\**",
+        "[Workspace Folder]\\Source\\**"
+    ],
+    "configurations": [
+        {
+            "name": "ToonTanksEditor Editor Win64 Development (ToonTanks)",
+            "compilerPath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\Projects\\Personal\\Ue5\\ToonTanks\\.vscode\\compileCommands_ToonTanks.json",
+			"includePath": [
+                "${workspaceFolder}\\Source\\**",
+                "${workspaceFolder}\\Intermediate\\**"
+            ],
+            "defines": [
+                "UNICODE",
+                "_UNICODE",
+                "__UNREAL__",
+                "UBT_COMPILED_PLATFORM=Windows",
+                "WITH_ENGINE=1",
+                "WITH_UNREAL_DEVELOPER_TOOLS=1",
+                "WITH_APPLICATION_CORE=1",
+                "WITH_COREUOBJECT=1"
+            ]
+        },
+        {
+            "name": "Win32",
+            "compilerPath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\Projects\\Personal\\Ue5\\ToonTanks\\.vscode\\compileCommands_Default.json",
+			"includePath": [
+                "${workspaceFolder}\\Source\\**",
+                "${workspaceFolder}\\Intermediate\\**"
+            ],
+            "defines": [
+                "UNICODE",
+                "_UNICODE",
+                "__UNREAL__",
+                "UBT_COMPILED_PLATFORM=Windows",
+                "WITH_ENGINE=1",
+                "WITH_UNREAL_DEVELOPER_TOOLS=1",
+                "WITH_APPLICATION_CORE=1",
+                "WITH_COREUOBJECT=1"
+            ]
+        }
+    ],
+    "version": 4
+}
