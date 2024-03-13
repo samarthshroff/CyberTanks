@@ -1,41 +1,137 @@
 [
 	{
-		"file": "D:\\Projects\\Personal\\Ue5\\ToonTanks\\Source\\ToonTanks\\BasePawn.cpp",
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\BasePawn.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
-			"@D:\\Projects\\Personal\\Ue5\\ToonTanks\\.vscode\\compileCommands_Default\\ToonTanks.1.rsp"
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
 	},
 	{
-		"file": "D:\\Projects\\Personal\\Ue5\\ToonTanks\\Source\\ToonTanks\\BasePawn.h",
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\BasePawn.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
-			"@D:\\Projects\\Personal\\Ue5\\ToonTanks\\.vscode\\compileCommands_Default\\ToonTanks.1.rsp"
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
 	},
 	{
-		"file": "D:\\Projects\\Personal\\Ue5\\ToonTanks\\Source\\ToonTanks\\ToonTanks.Build.cs",
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\CyberTanks.Build.cs",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
-			"@D:\\Projects\\Personal\\Ue5\\ToonTanks\\.vscode\\compileCommands_Default\\ToonTanks.1.rsp"
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
 	},
 	{
-		"file": "D:\\Projects\\Personal\\Ue5\\ToonTanks\\Source\\ToonTanks\\ToonTanks.cpp",
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\CyberTanks.cpp",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
-			"@D:\\Projects\\Personal\\Ue5\\ToonTanks\\.vscode\\compileCommands_Default\\ToonTanks.1.rsp"
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
 	},
 	{
-		"file": "D:\\Projects\\Personal\\Ue5\\ToonTanks\\Source\\ToonTanks\\ToonTanks.h",
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\CyberTanks.h",
 		"arguments": [
-			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
-			"@D:\\Projects\\Personal\\Ue5\\ToonTanks\\.vscode\\compileCommands_Default\\ToonTanks.1.rsp"
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\CyberTanksGameMode.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\CyberTanksGameMode.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\CyberTanksPlayerController.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\CyberTanksPlayerController.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\HealthComponent.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\HealthComponent.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\Projectile.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\Projectile.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\Tank.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\Tank.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\Tower.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\Projects\\Personal\\Ue5\\CyberTanks\\Source\\CyberTanks\\Tower.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\Projects\\Personal\\Ue5\\CyberTanks\\.vscode\\compileCommands_Default\\CyberTanks.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
 	}
