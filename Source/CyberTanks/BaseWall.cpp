@@ -2,11 +2,11 @@
 
 
 #include "BaseWall.h"
-//#include "Field/FieldSystemActor.h"
-#include "Field/FieldSystemComponent.h"
-#include "Components/BoxComponent.h"
+#include "Field/FieldSystemActor.h"
+//#include "Field/FieldSystemComponent.h"
+//#include "Components/BoxComponent.h"
 #include "Projectile.h"
-#include "GeometryCollection/GeometryCollectionComponent.h"
+//#include "GeometryCollection/GeometryCollectionComponent.h"
 
 
 // Sets default values
@@ -15,11 +15,11 @@ ABaseWall::ABaseWall()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	BoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
-	RootComponent = BoxComponent;
+	// BoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("Collider"));
+	// RootComponent = BoxComponent;
 
-	GeometryCollection = CreateDefaultSubobject<UGeometryCollectionComponent>(TEXT("Geometry Collection"));
-	GeometryCollection->SetupAttachment(RootComponent);
+	// GeometryCollection = CreateDefaultSubobject<UGeometryCollectionComponent>(TEXT("Geometry Collection"));
+	// GeometryCollection->SetupAttachment(RootComponent);
 
 	//WallMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("WallMesh"));
 	//WallMesh->SetupAttachment(RootComponent);
@@ -29,12 +29,12 @@ ABaseWall::ABaseWall()
 
 	//FieldSystemComponent->ToggleVisibility();
 
-	// FieldSystem = GetWorld()->SpawnActor<AFieldSystemActor>(AFieldSystemActor::StaticClass());
+	//FieldSystem = GetWorld()->SpawnActor<AFieldSystemActor>(AFieldSystemActor::StaticClass());
 	// FieldSystem->SetActorLocation(GetActorLocation());
 	// FieldSystem->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
 }
 
-void ABaseWall::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+void ABaseWall::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit, FTransform HitTransform)
 {
 	UE_LOG(LogTemp, Display, TEXT("BaseWall Hit"));
 
@@ -54,6 +54,11 @@ void ABaseWall::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimiti
 		if (Projectile->GameplayTag.MatchesTagExact(ProjectileGameplayTag))
 		{
 			UE_LOG(LogTemp, Display, TEXT("BaseWall Hit if if"));
+			if (FieldSystemActor)
+			{
+				UE_LOG(LogTemp, Display, TEXT("spawn field system actor"));
+				GetWorld()->SpawnActor<AFieldSystemActor>(FieldSystemActor, HitTransform);
+			}
 			// FieldSystemComponent->ToggleVisibility();
 		}
 	}
@@ -63,7 +68,7 @@ void ABaseWall::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimiti
 void ABaseWall::BeginPlay()
 {
 	Super::BeginPlay();
-	GeometryCollection->OnComponentHit.AddDynamic(this, &ABaseWall::OnHit);
+	//GeometryCollection->OnComponentHit.AddDynamic(this, &ABaseWall::OnHit);
 }
 
 // Called every frame

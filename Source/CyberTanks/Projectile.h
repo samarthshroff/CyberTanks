@@ -52,5 +52,6 @@ private:
 	TSubclassOf<class UCameraShakeBase> HitCameraShakeClass;
 
 public:
+	UPROPERTY(EditAnywhere)
 	FGameplayTag GameplayTag;
 };
