@@ -33,17 +33,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	UWallType WallType;
 
-	// UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	// class UGeometryCollectionComponent* GeometryCollection;
-
-	// // UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	// // UStaticMeshComponent* WallMesh;
-
-	// UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	// class UBoxComponent* BoxComponent;
-
-	// UPROPERTY(EditAnywhere, Category = "Components", meta = (ExposeFunctionCategories = "Components|FieldSystem", AllowPrivateAccess = "true"))
-	// class UFieldSystemComponent* FieldSystemComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	class UGeometryCollectionComponent* GeometryCollection;
 
 	UPROPERTY(EditAnywhere)
 	FGameplayTag GameplayTag;
@@ -51,17 +42,11 @@ protected:
 	UPROPERTY(EditAnywhere)
 	FGameplayTag ProjectileGameplayTag;
 
-	// UPROPERTY(EditAnywhere, Category = "Setup Vars")
-	// TSubclassOf<class AFieldSystemActor> FieldSystem;
-
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<class AFieldSystemActor> FieldSystemActor;//Object;
+	TSubclassOf<class AFieldSystemActor> FieldSystemActor;
 
 public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
-	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit, FTransform HitTransform);
-
+	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 };
