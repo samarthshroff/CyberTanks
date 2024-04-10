@@ -4,7 +4,26 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "GameplayTagContainer.h"
 #include "BasePawn.generated.h"
+
+USTRUCT(BlueprintType)
+struct FRateOfFire
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere)
+	int NumberOfBullets;
+
+	UPROPERTY(EditAnywhere)
+	float Interval;
+
+	// Reload time - return from Fire function if >= reloadtime
+	// Cooldown time - start accepting fire function after cooldown reaches 0 - countdown timer
+	//use these 2 timers to show UI (Gun hot and cooldown) bar
+};
+
 
 UCLASS()
 class CYBERTANKS_API ABasePawn : public APawn
@@ -44,4 +63,20 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TSubclassOf<class UCameraShakeBase> DeathCameraShakeClass;
+	bool IsFiring;
+	FTimerHandle FireRateTimerHandle;
+
+	int32 PendingProjectileToFire;
+
+private:
+	void FireProjectile();
+
+protected:
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TMap < FGameplayTag, FRateOfFire> RateOfFire;
+
+	// For now hardcoding this from the BP editor.
+	// This value will come from Inventory and current weapon selected.
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	FGameplayTag CurrentProjectile;
 };

@@ -29,7 +29,9 @@ void ABaseWall::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimiti
 		{
 			if (FieldSystemActor)
 			{
-				GetWorld()->SpawnActor<AFieldSystemActor>(FieldSystemActor, GetActorTransform());
+				DrawDebugSphere(GetWorld(), GetActorLocation(), 25.f, 12, FColor::Red, false, 3.f);
+
+				GetWorld()->SpawnActor<AFieldSystemActor>(FieldSystemActor, GetActorLocation(), FRotator(0.0f, 0.0f, 0.0f));
 			}
 		}
 	}

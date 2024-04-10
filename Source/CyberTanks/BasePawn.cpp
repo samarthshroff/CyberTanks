@@ -4,6 +4,7 @@
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "TimerManager.h"
 #include "Projectile.h"
 
 // Sets default values
@@ -23,6 +24,8 @@ ABasePawn::ABasePawn()
 
 	ProjectTileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("ProjectileSpawnPoint"));
 	ProjectTileSpawnPoint->SetupAttachment(TurretMesh);
+
+	IsFiring = false;
 }
 
 void ABasePawn::RotateTurret(FVector LookAtTarget)
@@ -34,11 +37,53 @@ void ABasePawn::RotateTurret(FVector LookAtTarget)
 
 void ABasePawn::Fire()
 {
+
+	//UE_LOG(LogTemp, Display, TEXT("The gameplay tag is %s and rate of fire is %d"), *(CurrentProjectile.ToString()), NumberOfBulletsPerClick[CurrentProjectile]);
+
+	UE_LOG(LogTemp, Display, TEXT("The gameplay tag is %s and rate of fire is %d"), *(CurrentProjectile.ToString()), RateOfFire[CurrentProjectile].NumberOfBullets);
+	// TODO - add an if to set this value after a delay of reload and cooldown
+	PendingProjectileToFire += RateOfFire[CurrentProjectile].NumberOfBullets;
+
+	if (!IsFiring)
+	{
+		UE_LOG(LogTemp, Display, TEXT("in IsFiring"));
+		IsFiring = true;
+		GetWorldTimerManager().SetTimer(FireRateTimerHandle, this, &ABasePawn::FireProjectile, RateOfFire[CurrentProjectile].Interval, true);
+	}
+	//DrawDebugSphere(GetWorld(), Location, 25.f, 12, FColor::Red, false, 3.f);
+	/*if (!IsFiring)
+	{
+		IsFiring = true;
+		FVector Location = ProjectTileSpawnPoint->GetComponentLocation();
+		FRotator Rotation = ProjectTileSpawnPoint->GetComponentRotation();
+		int RateOfFire = NumberOfBulletsPerClick[CurrentProjectile];
+		for (auto i = 0;i < RateOfFire;++i)
+		{
+			AProjectile* Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation);
+			Projectile->SetOwner(this);
+		}
+		IsFiring = false;
+	}*/
+}
+
+void ABasePawn::FireProjectile()
+{
+	UE_LOG(LogTemp, Display, TEXT("FireProjectile"));
 	FVector Location = ProjectTileSpawnPoint->GetComponentLocation();
 	FRotator Rotation = ProjectTileSpawnPoint->GetComponentRotation();
-	//DrawDebugSphere(GetWorld(), Location, 25.f, 12, FColor::Red, false, 3.f);
 	AProjectile* Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, Location, Rotation);
 	Projectile->SetOwner(this);
+
+	UE_LOG(LogTemp, Display, TEXT("Pending projectiles before %d"), PendingProjectileToFire);
+	--PendingProjectileToFire;
+	UE_LOG(LogTemp, Display, TEXT("Pending projectiles after %d"), PendingProjectileToFire);
+	if (PendingProjectileToFire <= 0)
+	{
+		UE_LOG(LogTemp, Display, TEXT("No more Pending projectiles"));
+		GetWorldTimerManager().ClearTimer(FireRateTimerHandle);
+		IsFiring = false;
+	}
+
 }
 
 void ABasePawn::HandleDestruction()
