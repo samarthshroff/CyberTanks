@@ -8,7 +8,7 @@
 #include "BasePawn.generated.h"
 
 USTRUCT(BlueprintType)
-struct FRateOfFire
+struct FProjectileMetaData
 {
 	GENERATED_BODY()
 
@@ -19,9 +19,24 @@ public:
 	UPROPERTY(EditAnywhere)
 	float Interval;
 
+	UPROPERTY(EditAnywhere)
+	float WeaponHeatTimer;
+
+	UPROPERTY(EditAnywhere)
+	float ReloadTimer; // cooldown timer
+
 	// Reload time - return from Fire function if >= reloadtime
 	// Cooldown time - start accepting fire function after cooldown reaches 0 - countdown timer
 	//use these 2 timers to show UI (Gun hot and cooldown) bar
+};
+
+UENUM(BlueprintType)
+enum UWeaponState
+{
+	HEATING UMETA(DisplayName = "Heating"),
+	HEATED   UMETA(DisplayName = "Heated"),
+	RELOADING      UMETA(DisplayName = "Reloading"),
+	RELOADED   UMETA(DisplayName = "Reloaded")
 };
 
 
@@ -40,6 +55,17 @@ protected:
 	void Fire();
 
 private:
+	/*
+	Heating - can fire in this state
+	Heated - cannot fire
+	Reloading - cannot fire
+	Reloaded - can fire
+	*/
+	bool IsFiring;
+
+	FTimerHandle FireRateTimerHandle;
+	int32 PendingProjectileToFire;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	class UCapsuleComponent* CapsuleComp;
 
@@ -63,17 +89,16 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	TSubclassOf<class UCameraShakeBase> DeathCameraShakeClass;
-	bool IsFiring;
-	FTimerHandle FireRateTimerHandle;
-
-	int32 PendingProjectileToFire;
 
 private:
 	void FireProjectile();
 
 protected:
 	UPROPERTY(EditAnywhere, Category = "Combat")
-	TMap < FGameplayTag, FRateOfFire> RateOfFire;
+	TMap < FGameplayTag, FProjectileMetaData> ProjectileData;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TMap < FGameplayTag, UWeaponState> WeaponsState;
 
 	// For now hardcoding this from the BP editor.
 	// This value will come from Inventory and current weapon selected.

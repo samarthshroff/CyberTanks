@@ -35,20 +35,22 @@ void ABasePawn::RotateTurret(FVector LookAtTarget)
 	TurretMesh->SetWorldRotation(FMath::RInterpTo(TurretMesh->GetComponentRotation(), LookAtLocation, UGameplayStatics::GetWorldDeltaSeconds(this), 25.f));
 }
 
+// TODO - Add argument for weaponIndex that corresponds to the weapons from gameplaytag
 void ABasePawn::Fire()
 {
 
 	//UE_LOG(LogTemp, Display, TEXT("The gameplay tag is %s and rate of fire is %d"), *(CurrentProjectile.ToString()), NumberOfBulletsPerClick[CurrentProjectile]);
 
-	UE_LOG(LogTemp, Display, TEXT("The gameplay tag is %s and rate of fire is %d"), *(CurrentProjectile.ToString()), RateOfFire[CurrentProjectile].NumberOfBullets);
+	UE_LOG(LogTemp, Display, TEXT("The gameplay tag is %s and rate of fire is %d"), *(CurrentProjectile.ToString()), ProjectileData[CurrentProjectile].NumberOfBullets);
 	// TODO - add an if to set this value after a delay of reload and cooldown
-	PendingProjectileToFire += RateOfFire[CurrentProjectile].NumberOfBullets;
+	PendingProjectileToFire += ProjectileData[CurrentProjectile].NumberOfBullets;
 
 	if (!IsFiring)
 	{
 		UE_LOG(LogTemp, Display, TEXT("in IsFiring"));
 		IsFiring = true;
-		GetWorldTimerManager().SetTimer(FireRateTimerHandle, this, &ABasePawn::FireProjectile, RateOfFire[CurrentProjectile].Interval, true);
+
+		GetWorldTimerManager().SetTimer(FireRateTimerHandle, this, &ABasePawn::FireProjectile, ProjectileData[CurrentProjectile].Interval, true);
 	}
 	//DrawDebugSphere(GetWorld(), Location, 25.f, 12, FColor::Red, false, 3.f);
 	/*if (!IsFiring)
